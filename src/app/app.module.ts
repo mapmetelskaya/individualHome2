@@ -13,6 +13,7 @@ import { FinlandComponent } from './finland/finland.component';
 import { ItalyComponent } from './italy/italy.component';
 import { NetherlandsComponent } from './netherlands/netherlands.component';
 import { AboutComponent } from './about/about.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutComponent } from './about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

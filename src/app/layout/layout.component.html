@@ -1,24 +1,46 @@
-
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
     <img [src]="images[0]" alt="Random first slide">
     <div class="carousel-caption">
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>
+        <a href="mailto:{{email}}">{{title}}</a>
+        <img src="{{logo}}">
+      </h3>
+      <p>Группа: 10502118</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
     <img [src]="images[1]" alt="Random second slide">
     <div class="carousel-caption">
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>
+        <a href="mailto:{{email}}">{{title}}</a>
+        <img src="{{logo}}">
+      </h3>
+      <p>Группа: 10502118</p>
     </div>
   </ng-template>
   <ng-template ngbSlide>
     <img [src]="images[2]" alt="Random third slide">
     <div class="carousel-caption">
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>
+        <a href="mailto:{{email}}">{{title}}</a>
+        <img src="{{logo}}">
+      </h3>
+      <p>Группа: 10502118</p>
     </div>
   </ng-template>
 </ngb-carousel>
+
+<div class="app-container" fxLayout="row">
+  <div class="navigation">
+    <ul>
+      <li *ngFor="let nav of navigation">
+        <a [routerLink]="nav.route">
+          <img src="{{nav.img ? nav.img :logo}}" width="100" height="50" alt="{{nav.name}}">
+          {{nav.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>
